@@ -1,0 +1,502 @@
+/* ================================
+   style.css
+   Mobile first et responsive
+   ================================ */
+
+/* 1. reset basique pour tout */
+* {
+  margin: 0;
+  /* on remet tout a zero */
+  padding: 0;
+  /* pareil pour les espacements */
+  box-sizing: border-box;
+  /* facilite les calculs de largeur */
+}
+
+/* 2. variables de couleur pour débutant */
+:root {
+  --color-bg: #121212;
+  /* fond sombre principal */
+  --color-text: #E0E0E0;
+  /* texte clair */
+  --color-accent: #005cbf;
+  /* bleu */
+  --color-panel: #1E1E1E;
+  /* fond des cartes */
+  --color-border: #333333;
+  /* bordure */
+  --color-light-bg: #f2f2f2;
+  /* gris tres leger pour sections */
+  --color-link: #ffffff;
+  /* bleu clair pour liens */
+  --radius-base: 6px;
+  /* arrondi des bords */
+  --gap-sm: 1rem;
+  /* petit espace (16px) */
+  --gap-md: 1.5rem;
+  /* espace moyen (24px) */
+}
+
+/* 3. style de base pour html/body */
+html,
+body {
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /* police simple */
+  background-color: var(--color-bg);
+  /* fond global sombre */
+  color: var(--color-text);
+  /* texte principal */
+  font-size: 16px;
+  /* taille de base */
+  line-height: 1.5;
+  /* hauteur de ligne comfortable */
+}
+
+/* liens (a) */
+a {
+  color: var(--color-link);
+  /* couleur pour les liens */
+  text-decoration: none;
+  /* pas de souligné */
+}
+
+a:hover {
+  text-decoration: underline;
+  /* soulignement au survol */
+}
+
+/* CONTAINER pour centrer le contenu */
+.container {
+  width: 100%;
+  /* prend toute la largeur dispo */
+  max-width: 36rem;
+  /* ≃576px, debutant mobile */
+  margin: 0 auto;
+  /* centre horizontalement */
+  padding: var(--gap-sm);
+  /* un peu de marge interieur */
+}
+
+.header-lead {
+  background-color: var(--color-accent);
+  /* bleu pour le titre */
+  color: #FFF;
+  /* texte blanc */
+  text-align: center;
+  /* centrer le texte */
+  padding: 0.75rem 1rem;
+  /* espace autour */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  font-size: 1.25rem;
+  /* taille du texte */
+  margin-bottom: var(--gap-sm);
+  /* marge sous le titre */
+}
+
+.header-subtitle {
+  font-weight: 800;
+  font-size: 0.7em;
+}
+
+/* TITRE DE SECTION (h2) */
+.section-title {
+  background-color: var(--color-accent);
+  /* blanc pour le titre */
+  color: #FFF;
+  /* texte blanc */
+  text-align: center;
+  /* centrer le texte */
+  padding: 0.75rem 1rem;
+  /* espace autour */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  font-size: 1.25rem;
+  /* taille du texte */
+  margin-bottom: var(--gap-sm);
+  /* marge sous le titre */
+}
+
+/* TITRE DE CARTE (h3) */
+.card-title {
+  background-color: var(--color-accent);
+  /* bleu */
+  color: #FFF;
+  /* blanc */
+  padding: 0.6rem 0.8rem;
+  /* espace interne */
+  border-radius: var(--radius-base);
+  /* coin arrondi */
+  font-size: 1rem;
+  /* taille */
+  text-align: center;
+  /* centré */
+  margin-bottom: 0.5rem;
+  /* petite marge */
+}
+
+/* LISTES SIMPLES (ul/li) */
+.liste-simple {
+  list-style-type: disc;
+  /* puces normales */
+  padding-left: 1.25rem;
+  /* decallage des puces */
+  margin-top: 0.5rem;
+  /* petit decallage au dessus */
+}
+
+.liste-simple li {
+  margin-bottom: 0.4rem;
+  /* espace entre items */
+}
+
+/* LISTE COORDONNÉES */
+.liste-coordonnees {
+  list-style: none;
+  /* pas de puces */
+  padding-left: 0;
+  /* on enleve le padding */
+}
+
+.liste-coordonnees li {
+  margin-bottom: 0.6rem;
+  /* espace entre items */
+  font-weight: 500;
+  /* un peu gras */
+}
+
+.liste-coordonnees a {
+  color: var(--color-accent);
+  /* lien bleu */
+}
+
+/* PETITE CARTE (div.card) */
+.card {
+  background-color: var(--color-panel);
+  /* fond gris foncé */
+  border: 1px solid var(--color-border);
+  /* bordure discrète */
+  border-radius: var(--radius-base);
+  /* arrondir les bords */
+  padding: var(--gap-sm);
+  /* espace interieur */
+  margin-bottom: var(--gap-sm);
+  /* marge sous la carte */
+}
+
+/* POUR LES DEUX COLONNES (Compétences & Qualités) */
+.two-columns {
+  display: flex;
+  /* on met en flexbox */
+  flex-direction: column;
+  /* par défaut en colonne sur mobile */
+  gap: var(--gap-sm);
+  /* espace entre les cards */
+  margin-bottom: var(--gap-md);
+  /* marge en dessous */
+}
+
+/* HEADER PRINCIPAL */
+.site-header {
+  background-color: var(--color-panel);
+  /* fond gris foncé */
+  border: 1px solid var(--color-border);
+  /* bordure */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  padding: var(--gap-md) var(--gap-sm);
+  /* espace interieur (haut/bas:1.5rem, gauche/droite:1rem) */
+  text-align: center;
+  /* tout centré */
+  margin-bottom: var(--gap-md);
+  /* marge sous le header */
+}
+
+.header-title {
+  font-size: 1.30rem;
+  /* taille plus grande */
+  font-weight: 1000;
+  /* texte assez gras */
+  color: var(--color-text);
+  /* texte clair */
+  margin-bottom: 0.2rem;
+  /* petit espace */
+}
+
+.header-subtitle {
+  font-size: 0.8rem;
+  /* taille normale */
+  font-weight: 600;
+  /* un peu gras */
+  color: var(--color-accent);
+  /* bleu */
+  margin-bottom: 0.5rem;
+  /* espace */
+}
+
+.header-lead {
+  font-size: 1px;
+  height: auto;
+  font-size: 0.9rem;
+  /* taille légèrement plus petite */
+  color: var(--color-text);
+  /* texte clair */
+  line-height: 1.4;
+  /* interligne */
+}
+
+/* NAVBAR */
+.navbar {
+  margin-bottom: var(--gap-md);
+  /* espace en dessous */
+  background-color: var(--color-panel);
+  /* fond gris foncé */
+  border: 1px solid var(--color-border);
+  /* bordure */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  position: relative;
+  /* pour positionner le burger */
+}
+
+/* BOUTON BURGER pour mobile */
+.navbar-toggle {
+  display: block;
+  /* visible sur mobile */
+  padding: var(--gap-sm);
+  /* espace autour */
+  cursor: pointer;
+  /* curseur pointeur */
+}
+
+.navbar-toggle span {
+  /* chaque barre du burger */
+  align-items: baseline;
+  display: block;
+  /* chaque barre */
+  width: 25px;
+  /* largeur de la barre */
+  height: 3px;
+  /* epaisseur */
+  background-color: #FFF;
+  /* barre blanche */
+  margin: 4px 0;
+  /* espace entre barres */
+  border-radius: 2px;
+  /* arrondi leger */
+}
+
+.menuburger {
+  alignment-baseline: middle;
+  position: center;
+  text-align: center;
+
+  z-index: 1000;
+  /* au dessus des autres éléments */
+
+}
+
+/* LISTE DU MENU (ul) */
+.navbar__list {
+  display: none;
+  /* masquée par défaut sur mobile */
+  flex-direction: column;
+  /* item en colonne */
+  list-style: none;
+  /* pas de puces */
+}
+
+.navbar__list.active {
+  display: flex;
+  /* afficher quand active */
+}
+
+.navbar__item {
+  text-align: center;
+  /* centrage des liens */
+}
+
+.navbar__link {
+  display: block;
+  /* bloc complet */
+  padding: 0.75rem;
+  /* espace tout autour */
+  color: #FFF;
+  /* texte blanc */
+  background-color: var(--color-accent);
+  /* bleu */
+  transition: background-color 0.2s ease;
+  /* petite transition */
+}
+
+.navbar__link:hover {
+  background-color: #004a9c;
+  /* bleu foncé au survol */
+}
+
+.burger-title {
+  text-align: center;
+  padding: 10;
+  position: absolute;
+}
+
+/* DATE DANS LA CARTE */
+.card-date {
+  font-size: 0.85rem;
+  /* un peu plus petit */
+  font-weight: 400;
+  /* normal */
+  color: var(--color-text);
+  /* texte clair */
+  margin-bottom: 0.5rem;
+  /* espace dessous */
+  text-align: center;
+  /* centré */
+}
+
+/* SECTIONS AVEC FOND LEGER */
+.section,
+.section-light {
+  text-align: center;
+  background-color: #2a2b30;
+  /* gris tres leger */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  border: 1px solid var(--color-border);
+  /* bordure */
+  padding: var(--gap-sm);
+  /* espace interieur */
+  margin-bottom: var(--gap-md);
+  /* espace dessous */
+}
+
+* SECTION QR CODE */ #qr-code {
+  text-align: center;
+  background-color: #f9f9f9;
+  /* couleur claire de fond */
+  padding: 60px 20px;
+}
+
+/* TITRE DE SECTION (h2) */
+.section-linkedin {
+  background-color: var(--color-accent);
+  /* blanc pour le titre */
+  color: #FFF;
+  /* texte blanc */
+  text-align: center;
+  /* centrer le texte */
+  padding: 0.75rem 1rem;
+  /* espace autour */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  font-size: 1.25rem;
+  /* taille du texte */
+  margin-bottom: var(--gap-sm);
+  /* marge sous le titre */
+}
+
+#qr-code h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.qrcode {
+  max-width: 200px;
+  /* limite la taille de l’image */
+  width: 100%;
+  /* responsive */
+  height: auto;
+  /* garde les proportions */
+  display: block;
+  /* permet le centrage */
+  margin: 0 auto 40px auto;
+  /* centre l’image et ajoute un espace dessous */
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  /* texte centré */
+  padding: var(--gap-sm);
+  /* espace interieur */
+  background-color: var(--color-accent);
+  /* bleu */
+  color: #FFF;
+  /* blanc */
+  border-radius: var(--radius-base);
+  /* arrondi */
+  margin-top: var(--gap-md);
+  /* espace au dessus */
+  font-size: 0.9rem;
+  /* taille */
+}
+
+/* 4. MEDIA QUERIES pour desktop à partir de 768px */
+@media (min-width: 768px) {
+
+  /* container plus large */
+  .container {
+    max-width: 60rem;
+    /* ≃960px */
+  }
+
+  /* bouton burger masqué sur pc */
+  .navbar-toggle {
+    display: none;
+  }
+
+  /* afficher la barre nav en ligne */
+  .navbar__list {
+    display: flex !important;
+    /* force l'affichage */
+    flex-direction: row;
+    /* en ligne */
+  }
+
+  .navbar__item {
+    flex: 1 1 auto;
+    /* réparti uniformément */
+  }
+
+  .navbar__link {
+    padding: 1rem 0.75rem;
+    /* un peu plus de padding */
+  }
+
+  /* deux colonnes pour Comp & Qualités */
+  .two-columns {
+    flex-direction: row;
+    /* en deux colonnes sur pc */
+    gap: var(--gap-md);
+    /* plus d'espace entre */
+  }
+
+  .two-columns .card {
+    flex: 1;
+    /* meme largeur */
+  }
+
+  /* agrandir titres sur ecran plus grand */
+  .header-title {
+    font-size: 2.25rem;
+  }
+
+  .header-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .header-lead {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
