@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>CV - Kevin Wlosniewski - D&eacute;veloppeur Web</title>
-    <!-- lien vers le fichier css -->
     <link href="style.css" rel="stylesheet" />
     <meta
       content="CV de Kevin Wlosniewski, d&eacute;veloppeur web &amp; web mobile en formation DWWM."
@@ -13,9 +12,7 @@
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
   </head>
   <body>
-    <!-- conteneur principal pour centrer tout le contenu -->
     <div class="container">
-      <!-- HEADER : c'est l'entete du CV -->
       <header class="site-header">
         <h1 class="header-title">WK DEV STUDIO</h1>
         <h2 class="header-subtitle">
@@ -33,16 +30,13 @@
           des projets concrets. &raquo;
         </p>
       </header>
-      <!-- NAVBAR : menu de navigation -->
       <nav class="navbar">
-        <!-- bouton burger visible sur mobile -->
         <div class="navbar-toggle" id="burger-btn">
           <span> </span>
           <span> </span>
           <span> </span>
           <p class="menuburger">MENU DEROULANT</p>
         </div>
-        <!-- liste de liens du menu -->
         <ul class="navbar__list" id="nav-menu">
           <li class="navbar__item">
             <a class="navbar__link" href="#coordonnees"> Coordonn&eacute;es </a>
@@ -68,27 +62,10 @@
           </li>
         </ul>
       </nav>
-      <!-- SECTION COORDONNÉES -->
-      <!-- SECTION FORMATION -->
-      <!-- SECTION COMPÉTENCES & QUALITÉS -->
-      <!-- SECTION EXPÉRIENCES PROFESSIONNELLES -->
-      <!-- SECTION CENTRES D’INTÉRÊT -->
-      <!-- FOOTER : bas de page -->
       <footer class="site-footer">
         <p>&copy; 2025 &ndash; Mon CV</p>
       </footer>
     </div>
-    <!-- petit script pour gérer l'ouverture/fermeture du menu burger -->
-    <script>
-      // recuperer le bouton et le menu
-      const burger = document.getElementById("burger-btn");
-      const menu = document.getElementById("nav-menu");
-
-      // ajouter l'ecouteur sur le click
-      burger.addEventListener("click", () => {
-        menu.classList.toggle("active");
-      });
-    </script>
     <main>
       <section class="section" id="coordonnees">
         <h2 class="section-title">COORDONN&Eacute;ES</h2>
@@ -124,7 +101,6 @@
       </section>
       <section class="section section-light" id="competences">
         <h2 class="section-title">COMP&Eacute;TENCES &amp; QUALIT&Eacute;S</h2>
-        <!-- deux colonnes pour séparer comp. technique & qualités -->
         <div class="two-columns">
           <div class="card">
             <h3 class="card-title">Comp&eacute;tences Techniques</h3>
@@ -182,5 +158,7 @@
         </ul>
       </section>
     </main>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
